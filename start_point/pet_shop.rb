@@ -43,6 +43,21 @@ def remove_pet_by_name(pet_shop,name_to_remove)
   pet_shop[:pets].delete_if { |pet| pet[:name] == name_to_remove }
 end
 
+def add_pet_to_stock(pet_shop,new_pet)
+  pet_shop[:pets].push(new_pet)
+end
+
+def customer_pet_count(customer)
+  return customer[:pets].count()
+end
+
+def add_pet_to_customer(customer,new_pet)
+  customer[:pets].push(new_pet)
+end
+
+
+
+
 
 
 
