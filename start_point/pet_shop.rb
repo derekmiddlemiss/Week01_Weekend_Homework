@@ -25,10 +25,27 @@ end
 def pets_by_breed(pet_shop,breed_to_find)
   pets_found = []
   for pet in pet_shop[:pets] do
-    pets_found += [ pet ] if pet[:breed] == breed_to_find
+    pets_found.push(pet) if pet[:breed] == breed_to_find
+    # or could use pets_found += [pet] here, but seems a
+    # bit clumsy
   end
   return pets_found
 end
+
+def find_pet_by_name(pet_shop,name_to_find)
+  for pet in pet_shop[:pets] do
+    return pet if pet[:name] == name_to_find
+  end
+  return nil
+end
+
+def remove_pet_by_name(pet_shop,name_to_remove)
+  pet_shop[:pets].delete_if { |pet| pet[:name] == name_to_remove }
+end
+
+
+
+
 
 
 
